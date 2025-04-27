@@ -1,0 +1,20 @@
+region: eu-central-1
+bucket: russia-historical-climate-edyarich
+
+glue:
+  temp_dir: s3://russia-historical-climate-edyarich/temp/
+  log_path: s3://russia-historical-climate-edyarich/logs/spark_history_logs/
+
+redshift:
+  workgroup: russia-climate-workgroup
+  namespace: russia-climate-namespace
+  database: ghcn-data
+  port: 5439
+  iam_role: arn:aws:iam::615299755921:role/AmazonRedshift-CommandsAccessRole-20250416T193208
+
+quicksight:
+  user: 615299755921
+  group: Readers
+  vpc_connection_id: russia-climate-vpc-connection
+
+scripts_prefix: scripts/

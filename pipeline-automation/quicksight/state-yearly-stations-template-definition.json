@@ -1,0 +1,584 @@
+{
+    "DataSetConfigurations": [
+        {
+            "Placeholder": "StateYearlyStationsData",
+            "DataSetSchema": {
+                "ColumnSchemaList": [
+                    {
+                        "Name": "region",
+                        "DataType": "STRING",
+                        "GeographicRole": "STATE"
+                    },
+                    {
+                        "Name": "station_count",
+                        "DataType": "INTEGER"
+                    },
+                    {
+                        "Name": "region_lon",
+                        "DataType": "DECIMAL",
+                        "GeographicRole": "LONGITUDE"
+                    },
+                    {
+                        "Name": "region_lat",
+                        "DataType": "DECIMAL",
+                        "GeographicRole": "LATITUDE"
+                    },
+                    {
+                        "Name": "year",
+                        "DataType": "INTEGER"
+                    }
+                ]
+            },
+            "ColumnGroupSchemaList": [
+                {
+                    "Name": "region",
+                    "ColumnGroupColumnSchemaList": [
+                        {
+                            "Name": "region"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Sheets": [
+        {
+            "SheetId": "5b74f212-85f3-441e-a2d6-164397907257",
+            "Name": "Sheet 1",
+            "Visuals": [
+                {
+                    "LineChartVisual": {
+                        "VisualId": "459f93d5-585b-472c-b4a7-9aa7b63d5406",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Stations count by year</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "LineChartAggregatedFieldWells": {
+                                    "Category": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.year.0.1745026150738",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "year"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.station_count.1.1745026157901",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "station_count"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "SUM"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": []
+                                }
+                            },
+                            "SortConfiguration": {
+                                "CategorySort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "63533066-79e9-4963-b995-87b895db67e7.year.0.1745026150738",
+                                            "Direction": "ASC"
+                                        }
+                                    }
+                                ],
+                                "CategoryItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "ColorItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "SmallMultiplesLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                }
+                            },
+                            "Type": "LINE",
+                            "PrimaryYAxisLabelOptions": {
+                                "AxisLabelOptions": [
+                                    {
+                                        "CustomLabel": "total stations count",
+                                        "ApplyTo": {
+                                            "FieldId": "63533066-79e9-4963-b995-87b895db67e7.station_count.1.1745026157901",
+                                            "Column": {
+                                                "DataSetIdentifier": "StateYearlyStationsData",
+                                                "ColumnName": "station_count"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.year.0.1745026150738",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.station_count.1.1745026157901",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "Actions": [],
+                        "ColumnHierarchies": []
+                    }
+                },
+                {
+                    "GeospatialMapVisual": {
+                        "VisualId": "b51268a0-248a-464f-99b6-6ede9d2176a1",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Stations count by region in 2025</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "GeospatialMapAggregatedFieldWells": {
+                                    "Geospatial": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.region_lat.0.1745026383380",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "region_lat"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.region_lon.1.1745026384933",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "region_lon"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.station_count.2.1745026397005",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "station_count"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "MAX"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": []
+                                }
+                            },
+                            "Legend": {
+                                "Visibility": "HIDDEN"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "NONE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.region_lat.0.1745026383380",
+                                                "Visibility": "HIDDEN"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.region_lon.1.1745026384933",
+                                                "Visibility": "HIDDEN"
+                                            }
+                                        },
+                                        {
+                                            "ColumnTooltipItem": {
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "region"
+                                                },
+                                                "Label": "region",
+                                                "Visibility": "VISIBLE",
+                                                "Aggregation": {
+                                                    "AttributeAggregationFunction": {
+                                                        "SimpleAttributeAggregation": "UNIQUE_VALUE",
+                                                        "ValueForMultipleValues": "-"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.station_count.2.1745026397005",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "WindowOptions": {
+                                "Bounds": {
+                                    "North": 73.88000597330074,
+                                    "South": 30.500183485137896,
+                                    "West": 16.460288605971243,
+                                    "East": 152.594420087892
+                                },
+                                "MapZoomMode": "MANUAL"
+                            },
+                            "MapStyleOptions": {
+                                "BaseMapStyle": "LIGHT_GRAY"
+                            }
+                        },
+                        "ColumnHierarchies": [],
+                        "Actions": []
+                    }
+                },
+                {
+                    "HeatMapVisual": {
+                        "VisualId": "24452ec4-67df-4a45-9dfc-586bd936d46c",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Stations count by region every 10th year</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "HeatMapAggregatedFieldWells": {
+                                    "Rows": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.year.0.1745028453944",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "year"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Columns": [
+                                        {
+                                            "CategoricalDimensionField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.region.2.1745028563479",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "region"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.station_count.2.1745028477383",
+                                                "Column": {
+                                                    "DataSetIdentifier": "StateYearlyStationsData",
+                                                    "ColumnName": "station_count"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "MAX"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "SortConfiguration": {
+                                "HeatMapColumnSort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "63533066-79e9-4963-b995-87b895db67e7.region.2.1745028563479",
+                                            "Direction": "DESC"
+                                        }
+                                    }
+                                ]
+                            },
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.year.0.1745028453944",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.region.2.1745028563479",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "63533066-79e9-4963-b995-87b895db67e7.station_count.2.1745028477383",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "ColumnHierarchies": [],
+                        "Actions": []
+                    }
+                }
+            ],
+            "Layouts": [
+                {
+                    "Configuration": {
+                        "GridLayout": {
+                            "Elements": [
+                                {
+                                    "ElementId": "459f93d5-585b-472c-b4a7-9aa7b63d5406",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "b51268a0-248a-464f-99b6-6ede9d2176a1",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "24452ec4-67df-4a45-9dfc-586bd936d46c",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                }
+                            ],
+                            "CanvasSizeOptions": {
+                                "ScreenCanvasSizeOptions": {
+                                    "ResizeOption": "FIXED",
+                                    "OptimizedViewPortWidth": "1600px"
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "ContentType": "INTERACTIVE"
+        }
+    ],
+    "CalculatedFields": [],
+    "ParameterDeclarations": [],
+    "FilterGroups": [
+        {
+            "FilterGroupId": "37e7dad3-242c-4162-9b5e-10c2b2b8f7e3",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "04afde9a-3464-4a8f-8e25-2ee428c28adb",
+                        "Column": {
+                            "DataSetIdentifier": "StateYearlyStationsData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "FilterListConfiguration": {
+                                "MatchOperator": "CONTAINS",
+                                "CategoryValues": [
+                                    "2025"
+                                ],
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "5b74f212-85f3-441e-a2d6-164397907257",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "b51268a0-248a-464f-99b6-6ede9d2176a1"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "2aae3901-5068-40ff-963a-929a723aa51b",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "76055ab8-1288-4b31-ae96-58f8fe0d43d6",
+                        "Column": {
+                            "DataSetIdentifier": "StateYearlyStationsData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterConfiguration": {
+                                "MatchOperator": "ENDS_WITH",
+                                "CategoryValue": "0",
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "5b74f212-85f3-441e-a2d6-164397907257",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "24452ec4-67df-4a45-9dfc-586bd936d46c"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "3698d2b9-74a7-4be9-aaec-5408895400f2",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "9af027bf-dc0e-41b2-b9b1-fc14ebbf6fc1",
+                        "Column": {
+                            "DataSetIdentifier": "StateYearlyStationsData",
+                            "ColumnName": "region"
+                        },
+                        "Configuration": {
+                            "FilterListConfiguration": {
+                                "MatchOperator": "CONTAINS",
+                                "CategoryValues": [
+                                    "Altay",
+                                    "Amur",
+                                    "Arkhangel'sk",
+                                    "Bashkortostan",
+                                    "Buryat",
+                                    "Chukot",
+                                    "Irkutsk",
+                                    "Kamchatka",
+                                    "Karelia",
+                                    "Khabarovsk",
+                                    "Kirov",
+                                    "Komi",
+                                    "Krasnodar",
+                                    "Krasnoyarsk",
+                                    "Leningrad",
+                                    "Magadan",
+                                    "Moskva",
+                                    "Novosibirsk",
+                                    "Omsk",
+                                    "Perm'",
+                                    "Primor'ye",
+                                    "Rostov",
+                                    "Sakha",
+                                    "Sakhalin",
+                                    "Saratov",
+                                    "Sverdlovsk",
+                                    "Tomsk",
+                                    "Volgograd",
+                                    "Yamal-Nenets",
+                                    "Zabaykal'ye"
+                                ],
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "5b74f212-85f3-441e-a2d6-164397907257",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "24452ec4-67df-4a45-9dfc-586bd936d46c"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        }
+    ],
+    "AnalysisDefaults": {
+        "DefaultNewSheetConfiguration": {
+            "InteractiveLayoutConfiguration": {
+                "Grid": {
+                    "CanvasSizeOptions": {
+                        "ScreenCanvasSizeOptions": {
+                            "ResizeOption": "FIXED",
+                            "OptimizedViewPortWidth": "1600px"
+                        }
+                    }
+                }
+            },
+            "SheetContentType": "INTERACTIVE"
+        }
+    },
+    "Options": {
+        "WeekStart": "SUNDAY",
+        "QBusinessInsightsStatus": "DISABLED",
+        "ExcludedDataSetArns": [],
+        "CustomActionDefaults": {
+            "highlightOperation": {
+                "Trigger": "DATA_POINT_CLICK"
+            }
+        }
+    },
+    "QueryExecutionOptions": {
+        "QueryExecutionMode": "AUTO"
+    }
+}

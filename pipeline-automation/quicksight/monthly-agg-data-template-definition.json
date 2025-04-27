@@ -1,0 +1,1540 @@
+{
+    "DataSetConfigurations": [
+        {
+            "Placeholder": "MonthlyAggData",
+            "DataSetSchema": {
+                "ColumnSchemaList": [
+                    {
+                        "Name": "region",
+                        "DataType": "STRING",
+                        "GeographicRole": "STATE"
+                    },
+                    {
+                        "Name": "avg_tmax",
+                        "DataType": "DECIMAL"
+                    },
+                    {
+                        "Name": "month",
+                        "DataType": "INTEGER"
+                    },
+                    {
+                        "Name": "region_lon",
+                        "DataType": "DECIMAL",
+                        "GeographicRole": "LONGITUDE"
+                    },
+                    {
+                        "Name": "region_lat",
+                        "DataType": "DECIMAL",
+                        "GeographicRole": "LATITUDE"
+                    },
+                    {
+                        "Name": "year",
+                        "DataType": "INTEGER"
+                    },
+                    {
+                        "Name": "tavg",
+                        "DataType": "DECIMAL"
+                    },
+                    {
+                        "Name": "city",
+                        "DataType": "STRING",
+                        "GeographicRole": "CITY"
+                    },
+                    {
+                        "Name": "total_prcp",
+                        "DataType": "DECIMAL"
+                    },
+                    {
+                        "Name": "avg_tmin",
+                        "DataType": "DECIMAL"
+                    }
+                ]
+            },
+            "ColumnGroupSchemaList": [
+                {
+                    "Name": "region-name",
+                    "ColumnGroupColumnSchemaList": [
+                        {
+                            "Name": "region"
+                        },
+                        {
+                            "Name": "city"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Sheets": [
+        {
+            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+            "Name": "Sheet 1",
+            "Visuals": [
+                {
+                    "GeospatialMapVisual": {
+                        "VisualId": "538bb54e-00b3-4b30-ba17-36ba79257cdb",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Precipitation By Region</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "GeospatialMapAggregatedFieldWells": {
+                                    "Geospatial": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lat.1.1745035936630",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region_lat"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lon.2.1745035937914",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region_lon"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.2.1745037105460",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "total_prcp"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": []
+                                }
+                            },
+                            "Legend": {
+                                "Visibility": "HIDDEN"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "NONE",
+                                    "TooltipFields": [
+                                        {
+                                            "ColumnTooltipItem": {
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region"
+                                                },
+                                                "Label": "region",
+                                                "Visibility": "VISIBLE",
+                                                "Aggregation": {
+                                                    "AttributeAggregationFunction": {
+                                                        "SimpleAttributeAggregation": "UNIQUE_VALUE"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lat.1.1745035936630",
+                                                "Visibility": "HIDDEN"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lon.2.1745035937914",
+                                                "Visibility": "HIDDEN"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.2.1745037105460",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "WindowOptions": {
+                                "Bounds": {
+                                    "North": 79.28780087076666,
+                                    "South": 5.113815812406344,
+                                    "West": -46.44944814397286,
+                                    "East": 175.78117732088435
+                                },
+                                "MapZoomMode": "MANUAL"
+                            }
+                        },
+                        "ColumnHierarchies": [],
+                        "Actions": []
+                    }
+                },
+                {
+                    "HeatMapVisual": {
+                        "VisualId": "aa8a66a4-39c3-499b-b812-b64fe1233521",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Average Daily Precipitation By year and Region</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "HeatMapAggregatedFieldWells": {
+                                    "Rows": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745035487196",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "year"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Columns": [
+                                        {
+                                            "CategoricalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region.0.1745035480854",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region"
+                                                },
+                                                "HierarchyId": "16ea12fe-2d1a-4e49-a0be-3350c618e98a"
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.2.1745036856244",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "total_prcp"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "MEDIAN"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "SortConfiguration": {
+                                "HeatMapColumnSort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region.0.1745035480854",
+                                            "Direction": "DESC"
+                                        }
+                                    }
+                                ]
+                            },
+                            "ColorScale": {
+                                "Colors": [
+                                    {
+                                        "Color": "#9FDEF1"
+                                    },
+                                    {
+                                        "Color": "#0251D3"
+                                    }
+                                ],
+                                "ColorFillType": "GRADIENT"
+                            },
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region.0.1745035480854",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745035487196",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.2.1745036856244",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "ColumnHierarchies": [
+                            {
+                                "PredefinedHierarchy": {
+                                    "HierarchyId": "16ea12fe-2d1a-4e49-a0be-3350c618e98a",
+                                    "Columns": [
+                                        {
+                                            "DataSetIdentifier": "MonthlyAggData",
+                                            "ColumnName": "region"
+                                        },
+                                        {
+                                            "DataSetIdentifier": "MonthlyAggData",
+                                            "ColumnName": "city"
+                                        }
+                                    ],
+                                    "DrillDownFilters": []
+                                }
+                            }
+                        ],
+                        "Actions": []
+                    }
+                },
+                {
+                    "BarChartVisual": {
+                        "VisualId": "ec7b555b-3028-4507-8bcb-28f54aec880e",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Precipitation By Month</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "BarChartAggregatedFieldWells": {
+                                    "Category": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "month"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.2.1745035310656",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "total_prcp"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": []
+                                }
+                            },
+                            "SortConfiguration": {
+                                "CategorySort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                            "Direction": "ASC"
+                                        }
+                                    }
+                                ],
+                                "CategoryItemsLimit": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "ColorItemsLimit": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "SmallMultiplesLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                }
+                            },
+                            "Orientation": "VERTICAL",
+                            "BarsArrangement": "CLUSTERED",
+                            "CategoryLabelOptions": {
+                                "AxisLabelOptions": [
+                                    {
+                                        "CustomLabel": "",
+                                        "ApplyTo": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                            "Column": {
+                                                "DataSetIdentifier": "MonthlyAggData",
+                                                "ColumnName": "month"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "ValueAxis": {
+                                "TickLabelOptions": {
+                                    "LabelOptions": {
+                                        "Visibility": "VISIBLE"
+                                    }
+                                },
+                                "GridLineVisibility": "VISIBLE"
+                            },
+                            "ValueLabelOptions": {
+                                "AxisLabelOptions": [
+                                    {
+                                        "CustomLabel": "Daily Average Precipitation",
+                                        "ApplyTo": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.2.1745035310656",
+                                            "Column": {
+                                                "DataSetIdentifier": "MonthlyAggData",
+                                                "ColumnName": "total_prcp"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "Legend": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.2.1745035310656",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "Actions": [],
+                        "ColumnHierarchies": []
+                    }
+                },
+                {
+                    "LineChartVisual": {
+                        "VisualId": "b50cd655-bd2f-443f-aeb3-170bec8da608",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>\n  Average daily minimum, average and maximum temperature\n  <br/>\n</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "LineChartAggregatedFieldWells": {
+                                    "Category": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.0.1745032612311",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "year"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.avg_tmax.1.1745032702494",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "avg_tmax"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.avg_tmin.2.1745032711749",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "avg_tmin"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.3.1745033448356",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "tavg"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": []
+                                }
+                            },
+                            "SortConfiguration": {
+                                "CategorySort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.0.1745032612311",
+                                            "Direction": "ASC"
+                                        }
+                                    }
+                                ],
+                                "CategoryItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "ColorItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "SmallMultiplesLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                }
+                            },
+                            "Type": "LINE",
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.0.1745032612311",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.3.1745033448356",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.avg_tmin.2.1745032711749",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.avg_tmax.1.1745032702494",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "Actions": [],
+                        "ColumnHierarchies": []
+                    }
+                },
+                {
+                    "LineChartVisual": {
+                        "VisualId": "5a7df21c-0973-44cd-b1c4-5365855515cd",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Average month temperature by year</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "LineChartAggregatedFieldWells": {
+                                    "Category": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "month"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.2.1745032956780",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "tavg"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "year"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "SortConfiguration": {
+                                "CategorySort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                            "Direction": "ASC"
+                                        }
+                                    }
+                                ],
+                                "CategoryItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "ColorItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "SmallMultiplesLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                }
+                            },
+                            "Type": "LINE",
+                            "XAxisDisplayOptions": {
+                                "TickLabelOptions": {
+                                    "LabelOptions": {
+                                        "Visibility": "VISIBLE"
+                                    }
+                                },
+                                "AxisLineVisibility": "VISIBLE",
+                                "ScrollbarOptions": {
+                                    "Visibility": "HIDDEN"
+                                }
+                            },
+                            "XAxisLabelOptions": {
+                                "SortIconVisibility": "VISIBLE",
+                                "AxisLabelOptions": [
+                                    {
+                                        "CustomLabel": "",
+                                        "ApplyTo": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                            "Column": {
+                                                "DataSetIdentifier": "MonthlyAggData",
+                                                "ColumnName": "month"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "PrimaryYAxisDisplayOptions": {
+                                "AxisOptions": {
+                                    "TickLabelOptions": {
+                                        "LabelOptions": {
+                                            "Visibility": "VISIBLE"
+                                        }
+                                    },
+                                    "GridLineVisibility": "VISIBLE"
+                                },
+                                "MissingDataConfigurations": [
+                                    {
+                                        "TreatmentOption": "INTERPOLATE"
+                                    }
+                                ]
+                            },
+                            "Series": [
+                                {
+                                    "DataFieldSeriesItem": {
+                                        "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                        "FieldValue": "1920",
+                                        "AxisBinding": "PRIMARY_YAXIS"
+                                    }
+                                },
+                                {
+                                    "DataFieldSeriesItem": {
+                                        "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                        "FieldValue": "1940",
+                                        "AxisBinding": "PRIMARY_YAXIS"
+                                    }
+                                },
+                                {
+                                    "DataFieldSeriesItem": {
+                                        "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                        "FieldValue": "1960",
+                                        "AxisBinding": "PRIMARY_YAXIS"
+                                    }
+                                },
+                                {
+                                    "DataFieldSeriesItem": {
+                                        "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                        "FieldValue": "1980",
+                                        "AxisBinding": "PRIMARY_YAXIS"
+                                    }
+                                },
+                                {
+                                    "DataFieldSeriesItem": {
+                                        "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                        "FieldValue": "2000",
+                                        "AxisBinding": "PRIMARY_YAXIS"
+                                    }
+                                },
+                                {
+                                    "DataFieldSeriesItem": {
+                                        "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                        "FieldValue": "2020",
+                                        "AxisBinding": "PRIMARY_YAXIS"
+                                    }
+                                }
+                            ],
+                            "Legend": {
+                                "Visibility": "VISIBLE"
+                            },
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.month.0.1745032869004",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.2.1745032956780",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "VisualPalette": {
+                                "ColorMap": [
+                                    {
+                                        "Element": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                            "FieldValue": "1920"
+                                        },
+                                        "Color": "#0251D3"
+                                    },
+                                    {
+                                        "Element": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                            "FieldValue": "1940"
+                                        },
+                                        "Color": "#6197E2"
+                                    },
+                                    {
+                                        "Element": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                            "FieldValue": "1960"
+                                        },
+                                        "Color": "#9FDEF1"
+                                    },
+                                    {
+                                        "Element": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                            "FieldValue": "1980"
+                                        },
+                                        "Color": "#F7E65A"
+                                    },
+                                    {
+                                        "Element": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                            "FieldValue": "2000"
+                                        },
+                                        "Color": "#F6AA54"
+                                    },
+                                    {
+                                        "Element": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745032910388",
+                                            "FieldValue": "2020"
+                                        },
+                                        "Color": "#FF8700"
+                                    }
+                                ]
+                            }
+                        },
+                        "Actions": [],
+                        "ColumnHierarchies": []
+                    }
+                },
+                {
+                    "LineChartVisual": {
+                        "VisualId": "abbf3a88-adb6-4778-9228-dcff71af5458",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Average Daily Precipitation By Year</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "LineChartAggregatedFieldWells": {
+                                    "Category": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.0.1745034262629",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "year"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.1.1745034266932",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "total_prcp"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": []
+                                }
+                            },
+                            "SortConfiguration": {
+                                "CategorySort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.0.1745034262629",
+                                            "Direction": "ASC"
+                                        }
+                                    }
+                                ],
+                                "CategoryItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "ColorItemsLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                },
+                                "SmallMultiplesLimitConfiguration": {
+                                    "OtherCategories": "INCLUDE"
+                                }
+                            },
+                            "Type": "LINE",
+                            "PrimaryYAxisLabelOptions": {
+                                "AxisLabelOptions": [
+                                    {
+                                        "CustomLabel": "Precipitation",
+                                        "ApplyTo": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.1.1745034266932",
+                                            "Column": {
+                                                "DataSetIdentifier": "MonthlyAggData",
+                                                "ColumnName": "total_prcp"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.0.1745034262629",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.total_prcp.1.1745034266932",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "Actions": [],
+                        "ColumnHierarchies": []
+                    }
+                },
+                {
+                    "HeatMapVisual": {
+                        "VisualId": "98c48d48-374f-4ccd-8c2b-32d3ca56a690",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Average Daily Temperature By Region and Year</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "HeatMapAggregatedFieldWells": {
+                                    "Rows": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745035487196",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "year"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Columns": [
+                                        {
+                                            "CategoricalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region.0.1745035480854",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region"
+                                                },
+                                                "HierarchyId": "e42f1241-2c9e-45a9-a3bb-1e22514da6a6"
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.2.1745035560311",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "tavg"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "SortConfiguration": {
+                                "HeatMapColumnSort": [
+                                    {
+                                        "FieldSort": {
+                                            "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region.0.1745035480854",
+                                            "Direction": "DESC"
+                                        }
+                                    }
+                                ]
+                            },
+                            "ColorScale": {
+                                "Colors": [
+                                    {
+                                        "Color": "#219FD7"
+                                    },
+                                    {
+                                        "Color": "#B6F5AC"
+                                    },
+                                    {
+                                        "Color": "#FF8700"
+                                    }
+                                ],
+                                "ColorFillType": "GRADIENT"
+                            },
+                            "DataLabels": {
+                                "Visibility": "HIDDEN",
+                                "Overlap": "DISABLE_OVERLAP"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "PRIMARY_VALUE",
+                                    "TooltipFields": [
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region.0.1745035480854",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.year.1.1745035487196",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.2.1745035560311",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "ColumnHierarchies": [
+                            {
+                                "PredefinedHierarchy": {
+                                    "HierarchyId": "e42f1241-2c9e-45a9-a3bb-1e22514da6a6",
+                                    "Columns": [
+                                        {
+                                            "DataSetIdentifier": "MonthlyAggData",
+                                            "ColumnName": "region"
+                                        },
+                                        {
+                                            "DataSetIdentifier": "MonthlyAggData",
+                                            "ColumnName": "city"
+                                        }
+                                    ],
+                                    "DrillDownFilters": []
+                                }
+                            }
+                        ],
+                        "Actions": []
+                    }
+                },
+                {
+                    "GeospatialMapVisual": {
+                        "VisualId": "073fcc3f-bbcb-4c92-b622-0ea08729546c",
+                        "Title": {
+                            "Visibility": "VISIBLE",
+                            "FormatText": {
+                                "RichText": "<visual-title>Temperature By Region</visual-title>"
+                            }
+                        },
+                        "Subtitle": {
+                            "Visibility": "VISIBLE"
+                        },
+                        "ChartConfiguration": {
+                            "FieldWells": {
+                                "GeospatialMapAggregatedFieldWells": {
+                                    "Geospatial": [
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lat.1.1745035936630",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region_lat"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "NumericalDimensionField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lon.2.1745035937914",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region_lon"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Values": [
+                                        {
+                                            "NumericalMeasureField": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.2.1745036252171",
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "tavg"
+                                                },
+                                                "AggregationFunction": {
+                                                    "SimpleNumericalAggregation": "AVERAGE"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "Colors": []
+                                }
+                            },
+                            "Legend": {
+                                "Visibility": "HIDDEN"
+                            },
+                            "Tooltip": {
+                                "TooltipVisibility": "VISIBLE",
+                                "SelectedTooltipType": "DETAILED",
+                                "FieldBasedTooltip": {
+                                    "AggregationVisibility": "HIDDEN",
+                                    "TooltipTitleType": "NONE",
+                                    "TooltipFields": [
+                                        {
+                                            "ColumnTooltipItem": {
+                                                "Column": {
+                                                    "DataSetIdentifier": "MonthlyAggData",
+                                                    "ColumnName": "region"
+                                                },
+                                                "Label": "region",
+                                                "Visibility": "VISIBLE",
+                                                "Aggregation": {
+                                                    "AttributeAggregationFunction": {
+                                                        "SimpleAttributeAggregation": "UNIQUE_VALUE"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lat.1.1745035936630",
+                                                "Visibility": "HIDDEN"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.region_lon.2.1745035937914",
+                                                "Visibility": "HIDDEN"
+                                            }
+                                        },
+                                        {
+                                            "FieldTooltipItem": {
+                                                "FieldId": "4d107030-f90d-41a6-8f1b-c71c407e815d.tavg.2.1745036252171",
+                                                "Visibility": "VISIBLE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "WindowOptions": {
+                                "Bounds": {
+                                    "North": 53.18169699313296,
+                                    "South": 33.2215601361132,
+                                    "West": 78.64470404016669,
+                                    "East": 125.942718387924
+                                },
+                                "MapZoomMode": "MANUAL"
+                            }
+                        },
+                        "ColumnHierarchies": [],
+                        "Actions": []
+                    }
+                }
+            ],
+            "Layouts": [
+                {
+                    "Configuration": {
+                        "GridLayout": {
+                            "Elements": [
+                                {
+                                    "ElementId": "b50cd655-bd2f-443f-aeb3-170bec8da608",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "5a7df21c-0973-44cd-b1c4-5365855515cd",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "abbf3a88-adb6-4778-9228-dcff71af5458",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "ec7b555b-3028-4507-8bcb-28f54aec880e",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "98c48d48-374f-4ccd-8c2b-32d3ca56a690",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "073fcc3f-bbcb-4c92-b622-0ea08729546c",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "aa8a66a4-39c3-499b-b812-b64fe1233521",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                },
+                                {
+                                    "ElementId": "538bb54e-00b3-4b30-ba17-36ba79257cdb",
+                                    "ElementType": "VISUAL",
+                                    "ColumnSpan": 18,
+                                    "RowSpan": 12
+                                }
+                            ],
+                            "CanvasSizeOptions": {
+                                "ScreenCanvasSizeOptions": {
+                                    "ResizeOption": "FIXED",
+                                    "OptimizedViewPortWidth": "1600px"
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "ContentType": "INTERACTIVE"
+        }
+    ],
+    "CalculatedFields": [],
+    "ParameterDeclarations": [],
+    "FilterGroups": [
+        {
+            "FilterGroupId": "44ea6034-eed3-42c4-8b17-1d3177bc0257",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "d3d3d728-4e36-4e4b-a51e-389b3a746034",
+                        "Column": {
+                            "DataSetIdentifier": "MonthlyAggData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterListConfiguration": {
+                                "MatchOperator": "CONTAINS",
+                                "SelectAllOptions": "FILTER_ALL_VALUES",
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "b50cd655-bd2f-443f-aeb3-170bec8da608"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "0a2d2488-767d-493d-b9a7-6a2c62d0e71e",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "483ffa8b-9e84-4158-8bc0-27bb182f2712",
+                        "Column": {
+                            "DataSetIdentifier": "MonthlyAggData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterListConfiguration": {
+                                "MatchOperator": "CONTAINS",
+                                "CategoryValues": [
+                                    "1920",
+                                    "1940",
+                                    "1960",
+                                    "1980",
+                                    "2000",
+                                    "2020"
+                                ],
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "5a7df21c-0973-44cd-b1c4-5365855515cd"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "7f0fbdc3-6834-4c8c-9e82-d0273f51401b",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "62d0f107-8b6f-4e0a-b0c9-d3e63c769b35",
+                        "Column": {
+                            "DataSetIdentifier": "MonthlyAggData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterListConfiguration": {
+                                "MatchOperator": "CONTAINS",
+                                "CategoryValues": [
+                                    "1920",
+                                    "1940",
+                                    "1960",
+                                    "1980",
+                                    "2000",
+                                    "2020"
+                                ],
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "ec7b555b-3028-4507-8bcb-28f54aec880e"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "f7448148-9e0e-48a2-b9e1-3a8cd192e903",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "00709f89-7a20-46ec-82d5-db983c21be30",
+                        "Column": {
+                            "DataSetIdentifier": "MonthlyAggData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterConfiguration": {
+                                "MatchOperator": "ENDS_WITH",
+                                "CategoryValue": "0",
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "98c48d48-374f-4ccd-8c2b-32d3ca56a690"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "afc02823-7f75-43f9-b492-7c2f14d5d754",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "f35d6b5f-55cc-4882-ba92-28df9428ac59",
+                        "Column": {
+                            "DataSetIdentifier": "MonthlyAggData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterConfiguration": {
+                                "MatchOperator": "EQUALS",
+                                "CategoryValue": "2024",
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "073fcc3f-bbcb-4c92-b622-0ea08729546c"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "e806ff17-36fa-49a7-a35b-cf5dfc13121b",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "57cf763e-0387-4d3f-81a0-2388dcf2de68",
+                        "Column": {
+                            "DataSetIdentifier": "MonthlyAggData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterConfiguration": {
+                                "MatchOperator": "ENDS_WITH",
+                                "CategoryValue": "0",
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "aa8a66a4-39c3-499b-b812-b64fe1233521"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        },
+        {
+            "FilterGroupId": "2e54cab4-42cd-46cd-b405-e037c6b56842",
+            "Filters": [
+                {
+                    "CategoryFilter": {
+                        "FilterId": "48898863-318c-439b-8e52-edf00076ec3c",
+                        "Column": {
+                            "DataSetIdentifier": "MonthlyAggData",
+                            "ColumnName": "year"
+                        },
+                        "Configuration": {
+                            "CustomFilterConfiguration": {
+                                "MatchOperator": "EQUALS",
+                                "CategoryValue": "2024",
+                                "NullOption": "NON_NULLS_ONLY"
+                            }
+                        }
+                    }
+                }
+            ],
+            "ScopeConfiguration": {
+                "SelectedSheets": {
+                    "SheetVisualScopingConfigurations": [
+                        {
+                            "SheetId": "99f199a1-fe1a-4b41-80cb-1f7292d701a3",
+                            "Scope": "SELECTED_VISUALS",
+                            "VisualIds": [
+                                "538bb54e-00b3-4b30-ba17-36ba79257cdb"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Status": "ENABLED",
+            "CrossDataset": "SINGLE_DATASET"
+        }
+    ],
+    "AnalysisDefaults": {
+        "DefaultNewSheetConfiguration": {
+            "InteractiveLayoutConfiguration": {
+                "Grid": {
+                    "CanvasSizeOptions": {
+                        "ScreenCanvasSizeOptions": {
+                            "ResizeOption": "FIXED",
+                            "OptimizedViewPortWidth": "1600px"
+                        }
+                    }
+                }
+            },
+            "SheetContentType": "INTERACTIVE"
+        }
+    },
+    "Options": {
+        "WeekStart": "SUNDAY",
+        "QBusinessInsightsStatus": "DISABLED",
+        "ExcludedDataSetArns": [],
+        "CustomActionDefaults": {
+            "highlightOperation": {
+                "Trigger": "DATA_POINT_CLICK"
+            }
+        }
+    },
+    "QueryExecutionOptions": {
+        "QueryExecutionMode": "AUTO"
+    }
+}

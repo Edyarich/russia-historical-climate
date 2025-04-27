@@ -1,0 +1,36 @@
+[project]
+name = "climate"
+version = "0.1.0"
+description = "Configuration file for python dependencies"
+authors = [
+    {name = "Edyarich",email = "ymnik432@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10, <3.11"
+dependencies = [
+    "numpy (>=2.2.4,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "boto3 (==1.37.1)",
+    "aiobotocore (==2.21.1)",
+    "awscliv2 (>=2.3.1,<3.0.0)",
+    "fastparquet (>=2024.11.0,<2025.0.0)",
+    "pyarrow (>=19.0.1,<20.0.0)",
+    "apache-airflow (==2.10.4)",
+    "apache-airflow-providers-amazon (>=9.6.0,<10.0.0)",
+    "geopandas (>=1.0.1,<2.0.0)",
+    "shapely (>=2.1.0,<3.0.0)",
+    "fiona (>=1.10.1,<2.0.0)",
+    "pyproj (>=3.7.1,<4.0.0)",
+    "rtree (>=1.4.0,<2.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)",
+]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+jupyter = "^1.1.1"
+
