@@ -2,6 +2,21 @@
 
 An end-to-end AWS data engineering pipeline for ingesting, processing, and visualizing historical climate data for Russia.
 
+## Problem
+The project is about how the Russian climate has changed for the last century.
+Particularly, we are interested in 3 main variables: temperature, precipitation, and number of weather stations.
+I chose [Global Historical Climatology Network Daily (GHCN-D)](https://registry.opendata.aws/noaa-ghcn/) dataset as the main data source.
+
+The main objective is to:
+- Develop a pipeline to collect the Russian climate archive data and process it in batch
+- Build a dashboard to visualize the trends
+
+## Dashboard
+![Stations dashboard](./pipeline-automation/dashboards/stations.png)
+
+![Temperature and precipitation dashboard](./pipeline-automation/dashboards/temp-and-prcp.png)
+
+
 ## 📖 Overview
 
 This project automates the full lifecycle of climate data from NOAA’s GHCN, including:
@@ -18,6 +33,38 @@ All infrastructure is defined in Terraform, and configuration values live in a s
 
 ![Pipeline Architecture](images/architecture.png)  
 *Figure 1: High-level data flow and AWS services.*
+
+```mermaid
+flowchart LR
+  subgraph S3 [Amazon S3]
+    A1["ghcn_data/external<br/>(raw files)"]
+    A2["ghcn_data/processed/metadata<br/>(CSV metadata)"]
+    A3["ghcn_data/processed/by_year<br/>(Parquet partitions)"]
+    A1 --> A2
+  end
+
+  subgraph Glue [AWS Glue ETL]
+    B1["metadata_to_redshift_job"]
+    B2["map_stations_job"]
+    B3["process_by_year_job"]
+    A2 --> B1 --> B2 --> B3
+  end
+
+  subgraph SFN [Step Functions]
+    C["BackfillByYear"]
+    B3 --> C
+  end
+
+  subgraph RS [Redshift Serverless]
+    D["russia-climate-workgroup<br/>ghcn-data database"]
+    C --> D
+  end
+
+  subgraph QS [QuickSight]
+    E["Dashboard"]
+    D -->|Direct Query / SPICE| E
+  end
+```
 
 ## 🔧 Components
 
@@ -104,30 +151,11 @@ pipeline-automation/
 ├── scripts/              # ETL & upload scripts
 ├── sql_scripts/          # Redshift DDL & COPY/INSERT scripts
 ├── quicksight/           # Template definitions & permissions
-└── images/               # Architecture & flow diagrams
+└── dashboards/           # PDF files with dashboard
 ```
-
-
-## 🖼 Image Descriptions
-
-- **images/architecture.png**  
-  High-level diagram showing S3 ingestion, Glue ETL, Step Functions orchestration, Redshift Serverless, and QuickSight.
-
-- **images/glue_flow.png**  
-  Detailed flowchart of the three Glue jobs and their data paths.
-
-- **images/quicksight_vpc.png**  
-  VPC connection setup for QuickSight with private subnets and NAT Gateway.
-
-- **images/dashboard_sample.png**  
-  Example QuickSight dashboard showcasing monthly and yearly climate trends.
 
 
 ## 🤝 Contributing
 
 Feel free to open issues or pull requests—happy to collaborate!  
 Contact: Edyarich <ymnik432@gmail.com>
-
-## 📜 License
-
-This project is licensed under the MIT License.
